@@ -1,0 +1,175 @@
+git add .
+git commit -m "Added task creation functionality"
+git push
+
+'''Your daily TaskFlow development workflow
+
+1. Open project
+   cd "C:\Users\Rakesh Kumar\OneDrive\Desktop\TaskFlow-Learning"
+   code .
+
+2. Start frontend
+   cd client
+   npm run dev
+
+3. Write and test code
+   
+   Make changes in VS Code and check the browser.
+
+4. Check code quality
+   npm run lint
+   npm run build
+   
+5. Save work to GitHub
+   cd ..
+   git add .
+   git commit -m "Update TaskFlow"
+   git push
+'''
+
+🚀 TaskFlow – Important Terminal Commands Cheat Sheet
+Here are the most useful terminal commands for your TaskFlow MERN project. Save this for future reference.
+
+Important: Commands are grouped by where you should execute them.
+1. Navigate between folders
+Command	Purpose
+pwd	Show current directory (Git Bash)
+cd foldername	Enter a folder
+cd ..	Go back one folder
+dir	List files and folders (Windows)
+cls	Clear terminal
+mkdir foldername	Create a folder
+
+# Go to TaskFlow root directory
+cd "C:\Users\Rakesh Kumar\OneDrive\Desktop\TaskFlow-Learning"
+
+# Enter frontend
+cd client
+
+# Go back to root
+cd ..
+
+# Enter backend
+cd server
+
+
+2. React + Vite commands
+Run inside client folder
+# Install dependencies
+npm install
+
+# Start React development server
+npm run dev
+
+# Create production build
+npm run build
+
+# Preview production build
+npm run preview
+
+# Check code using ESLint
+npm run lint
+
+
+3. Node.js + Express commands
+Run inside server folder
+# Initialize Node.js project
+npm init -y
+
+# Install Express
+npm install express
+
+# Install development dependency
+npm install -D nodemon
+
+# Install MongoDB library
+npm install mongoose
+
+# Install common backend dependencies (when needed)
+npm install cors dotenv
+
+# Start backend
+node server.js
+
+# Start backend with automatic restart
+npx nodemon server.js
+
+
+4. Git and GitHub commands
+Run inside TaskFlow root folder
+# Check Git version
+git --version
+
+# Initialize Git
+git init
+
+# Check modified files
+git status
+
+# Add all files
+git add .
+
+# Save changes locally
+git commit -m "Add task management functionality"
+
+# View commit history
+git log --oneline
+
+# Push changes to GitHub
+git push
+
+# Download latest changes
+git pull
+
+# View connected remote repository
+git remote -v
+
+
+5. npm package management
+# Check Node.js version
+node -v
+
+# Check npm version
+npm -v
+
+# Install a package
+npm install package-name
+
+# Uninstall a package
+npm uninstall package-name
+
+# View installed packages
+npm list
+
+# View outdated packages
+npm outdated
+
+# View available npm scripts
+npm run
+
+
+6. Useful TaskFlow folder commands
+# Go to project root
+cd "C:\Users\Rakesh Kumar\OneDrive\Desktop\TaskFlow-Learning"
+
+# Open project in VS Code
+code .
+
+# Open frontend folder
+cd client
+
+# Start frontend
+npm run dev
+
+
+7. Commands to remember most frequently
+These are the commands you'll use regularly during development.
+Command	When to use
+npm run dev	Start frontend
+npm run build	Check production build
+npm run lint	Find code issues
+node server.js	Start backend
+git status	Check Git changes
+git add .	Stage changes
+git commit -m "message"	Save a Git snapshot
+git push	Upload commits to GitHub

@@ -41,6 +41,33 @@ function App() {
     priority: "Medium",
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!newTask.title.trim() || !newTask.category.trim()) {
+      alert("Plz..! enter task title and category");
+      return;
+    }
+
+    const task = {
+      id: crypto.randomUUID(),
+      title: newTask.title.trim(),
+      category: newTask.category.trim(),
+      priority: newTask.priority,
+      status: "Pending",
+    };
+
+    setTasks([...tasks, task]);
+
+    setNewTask({
+      title: "",
+      category: "",
+      priority: "Medium",
+    });
+
+    setShowForm(false);
+  };
+
   return (
     <div className="app">
       <aside className="sidebar">
@@ -73,14 +100,38 @@ function App() {
         </header>
 
         {showForm && (
-          <form className="task-form">
+          <form className="task-form" onSubmit={handleSubmit}>
             <h2>Add New Task</h2>
 
-            <input type="text" placeholder="Enter task title" />
+            {/* Task title  */}
+            <input
+              type="text"
+              placeholder="Enter task title "
+              value={newTask.title}
+              onChange={(e) =>
+                setNewTask({ ...newTask, title: e.target.value })
+              }
+            />
 
-            <input type="text" placeholder="Enter category" />
+            {/* Task Category */}
+            <input
+              type="text"
+              placeholder="Enter task category"
+              value={newTask.category}
+              onChange={(e) =>
+                setNewTask({ ...newTask, category: e.target.value })
+              }
+            />
 
-            <select defaultValue="Medium">
+            {/* Task Pripority  */}
+            <select
+              name=""
+              value={newTask.priority}
+              onChange={(e) =>
+                setNewTask({ ...newTask, priority: e.target.value })
+              }
+              id=""
+            >
               <option value="Low">Low Priority</option>
               <option value="Medium">Medium Priority</option>
               <option value="High">High Priority</option>
