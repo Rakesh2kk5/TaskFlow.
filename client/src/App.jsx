@@ -33,6 +33,20 @@ function App() {
     },
   ]);
 
+  const [isSelectionMode, setIsSelectionMode] = useState(false);
+
+  const handleCompleteTask = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map(
+        (task) => (task.id === id ? { ...task, status: "Completed" } : task),
+
+        <button type="button" onClick={() => handleCompleteTask}>
+          Complete
+        </button>,
+      ),
+    );
+  };
+
   const [showForm, setShowForm] = useState(false);
 
   const [newTask, setNewTask] = useState({
@@ -58,7 +72,6 @@ function App() {
     };
 
     setTasks([...tasks, task]);
-
     setNewTask({
       title: "",
       category: "",
@@ -97,6 +110,7 @@ function App() {
           <button className="add-button" onClick={() => setShowForm(true)}>
             + Add Task
           </button>{" "}
+          <button onClick={() => setIsSelectionMode(true)}>Delete Tasks</button>
         </header>
 
         {showForm && (
@@ -183,6 +197,11 @@ function App() {
                     {task.priority}
                   </span>
                   <span>{task.status}</span>
+                  {task.status !== "Completed" && (
+                    <button onClick={() => handleCompleteTask(task.id)}>
+                      Complete
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
